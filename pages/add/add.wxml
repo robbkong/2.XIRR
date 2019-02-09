@@ -1,0 +1,54 @@
+<!--add.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="name">
+    <view class="title">设置名称</view>
+    <view class="name__body">
+      <input name="name" class="credit_card_name_input" placeholder="收益率名称" />
+    </view>
+  </view>
+
+  <view class="get_number" wx:if="{{month_n < 2}}">
+    <form bindsubmit="get_month_number">
+      <view>
+        <input name="m_number" class="credit_card_name_input" placeholder="大约n个月" />
+        <button class="month_number" formType="submit" type="primary">确定</button>
+      </view>
+    </form>
+  </view>
+
+  <view class="classname" wx:else>
+    <view class = "auto">自动填充<switch class="switch" name = "auto" checked bindchange="autoChange"/></view>
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">时间</view>
+        <view class="th">买/卖</view>
+        <view class="th">数值</view>
+      </view>
+
+      <block wx:for="{{dates}}" wx:for-item="date" wx:key="*this">
+        <view class="tr bg-g">
+            <view class="td">
+              <picker id = "{{index}}" name = "date{{index}}" mode="date" value="{{date}}" start="1950-01-01" end="2050-01-01" bindchange="bindDateChange">
+                  {{date}}
+              </picker>
+            </view>
+            <view class="td">
+            <switch name = "switch{{index}}" checked bindchange="switch1Change"/>
+            </view>
+            <view class="td">
+            <input name="value{{index}}" placeholder="数值" />
+            </view>
+        </view>
+      </block>
+
+
+        <button class="add_sumbit" type="primary" bindtap="add">加一行</button>
+        <button class="redu_sumbit" type="warn" bindtap="reduce">减一行</button>
+
+      <view class="rate">收益率结果： {{rate}}%</view>
+      <view class="sumbit">
+        <button class="add_sumbit" formType="submit" type="primary">计算并保存</button>
+      </view>
+    </view>
+    </view>
+</form>

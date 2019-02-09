@@ -1,0 +1,66 @@
+/* pages/XIRR/XIRR.wxss */
+/* abook.wxss */
+.table 
+{
+  border: 10rpx;
+  font-size: 16px;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+.tr 
+{  
+  display: flex;  
+  width: 100%;  
+  justify-content: center;  
+  height: 3rem;  
+  align-items: center;
+}
+.td 
+{    
+  width:40%;    
+  justify-content: center;    
+  text-align: center;
+}
+.td_red
+{
+  width:40%;    
+  justify-content: center;    
+  text-align: center;
+  color: #f00;
+  font-weight:bold;
+}
+.bg-w
+{  
+  background: snow;
+}
+.bg-g
+{  
+  background: #E6F3F9;
+}
+.th 
+{  
+  width: 40%;  
+  justify-content: center;  
+  background: #3366FF;  
+  color: #fff;
+  display: flex;  
+  height: 3rem;  
+  align-items: center;
+}
+.name{
+  margin: 30rpx;
+}
+.table_n{
+  padding: 0 50rpx;
+  display: flex;  
+  height: 3rem;  
+  align-items: center;
+}
+.container{
+    margin: 0 auto;
+    padding-top: 10rpx;
+    width: 70%;
+}
+.table_v
+{
+    margin: 0;
+}

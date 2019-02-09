@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/XIRR/XIRR",
+    "pages/add/add",
+    "pages/modify/modify"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "收益率计算",
+    "navigationBarTextStyle":"black"
+  }
+}

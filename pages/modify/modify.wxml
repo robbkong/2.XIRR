@@ -1,0 +1,41 @@
+<!--pages/modify/modify.wxml-->
+<form bindsubmit="formSubmit">
+    <view class="name">
+      <view class="title">收益率名称</view>
+          <view class="credit_card_name__body">
+            <input name="name" class="credit_card_name_input" placeholder="收益率名称" value="{{xirr.name}}"/>
+          </view>
+    </view>
+    <view class = "auto">自动填充<switch class="switch" name = "auto" checked bindchange="autoChange"/></view>
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">时间</view>
+        <view class="th">买/卖</view>
+        <view class="th">数值</view>
+      </view>
+      <block wx:for="{{dates}}" wx:for-item="date" wx:key="*this">
+        <view class="tr bg-g">
+            <view class="td">
+              <picker id = "{{index}}" name = "date{{index}}" mode="date" value="{{date}}" start="1950-01-01" end="2050-01-01" bindchange="bindDateChange">
+                  {{date}}
+              </picker>
+            </view>
+            <view class="td">
+              <switch name = "switch{{index}}" bindchange="switch1Change" wx:if="{{positive[index] == true}}"checked />
+              <switch name = "switch{{index}}" bindchange="switch1Change" wx:else />
+            </view>
+            <view class="td">
+              <input name="value{{index}}" placeholder="数值" value="{{value[index]}}"/>
+            </view>
+        </view>
+      </block>
+    </view>
+    <button class="add_sumbit" type="primary" bindtap="add">加一行</button>
+    <button class="redu_sumbit" type="warn" bindtap="reduce">减一行</button>
+
+    <view class="rate">收益率结果： {{xirr.rate}}%</view>
+    <view class="sumbit">
+    <button class="weui-btn" formType="submit" type="primary">保存</button>
+    <button class="weui-btn" type="warn" bindtap="del">删除</button>
+    </view>
+</form>

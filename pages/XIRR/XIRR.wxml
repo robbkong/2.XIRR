@@ -1,0 +1,24 @@
+<view class="container">
+  <button class="fun_add" bindtap="add" type="primary"> 新建XIRR收益率计算 </button>
+</view>
+<view class="table_v" wx:if="{{isnull == 0}}">
+  <view class="table_n">  以往的XIRR收益率计算</view>
+  <view class="classname">
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">名称</view>
+        <view class="th">利率</view>
+        <view class="th">更新时间</view>
+      </view>
+      <block wx:for="{{xirrs}}" wx:for-item="info" wx:key="*this">
+        <view class="tr bg-g">
+              <navigator class="tr" catchtap="recordChange" url="../modify/modify?index={{index}}">
+                  <view class="td">{{info.name}}</view>
+                  <view class="td">{{info.rate}}%</view>
+                  <view class="td">{{info.create}}</view>
+              </navigator>
+          </view>
+      </block>
+    </view>
+  </view>
+</view>
